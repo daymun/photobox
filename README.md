@@ -23,8 +23,13 @@ Or install it yourself as:
     $ gem install photobox
 
 ## Usage
-* Group photos into folders by month: `photobox cluster`
-* View summary of photo folders and their contents: `photobox info`
+Group photos into folders by month:
+
+    $ photobox cluster
+
+View a summary of photo folders and their contents:
+
+    $ photobox info
 
 ## Contributing
 1. Fork it ( https://github.com/[my-github-username]/photobox/fork )
