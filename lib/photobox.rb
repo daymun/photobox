@@ -26,9 +26,7 @@ module Photobox
       protected
 
       def cluster_photos(photos)
-        if photos.count.zero?
-          puts "No unclustered photos."
-        else
+        unless photos.count.zero?
           month_dirs = photos.map do |photo|
             "#{PHOTOS_DIR}/#{photo.split("/")[-1].split(" ")[0]}"
           end
@@ -43,9 +41,7 @@ module Photobox
       end
 
       def cluster_screenshots(screenshots)
-        if screenshots.count.zero?
-          puts "No unclustered screenshots."
-        else
+        unless screenshots.count.zero?
           puts "Moving #{screenshots.count} screenshots to `#{SCREENSHOTS_DIR}`"
           FileUtils.mkdir_p(SCREENSHOTS_DIR)
           FileUtils.mv(screenshots, SCREENSHOTS_DIR)
@@ -53,9 +49,7 @@ module Photobox
       end
 
       def cluster_videos(videos)
-        if videos.count.zero?
-          puts "No unclustered videos."
-        else
+        unless videos.count.zero?
           puts "Moving #{videos.count} videos to `#{VIDEOS_DIR}`"
           FileUtils.mkdir_p(VIDEOS_DIR)
           FileUtils.mv(videos, VIDEOS_DIR)
