@@ -35,7 +35,7 @@ module Photobox
 
           month_dirs.uniq.each do |month_dir|
             month_photos = Dir.glob("#{month_dir}*.jpg")
-            puts "Moving #{month_photos.count} photos to #{month_dir}."
+            puts "Moving #{month_photos.count} photos to `#{month_dir}`"
             FileUtils::mkdir_p(month_dir)
             FileUtils.mv(month_photos, month_dir)
           end
@@ -46,7 +46,7 @@ module Photobox
         if screenshots.count.zero?
           puts "No unclustered screenshots."
         else
-          puts "Moving #{screenshots.count} screenshots to #{SCREENSHOTS_DIR}"
+          puts "Moving #{screenshots.count} screenshots to `#{SCREENSHOTS_DIR}`"
           FileUtils.mkdir_p(SCREENSHOTS_DIR)
           FileUtils.mv(screenshots, SCREENSHOTS_DIR)
         end
@@ -56,7 +56,7 @@ module Photobox
         if videos.count.zero?
           puts "No unclustered videos."
         else
-          puts "Moving #{videos.count} videos to #{VIDEOS_DIR}"
+          puts "Moving #{videos.count} videos to `#{VIDEOS_DIR}`"
           FileUtils.mkdir_p(VIDEOS_DIR)
           FileUtils.mv(videos, VIDEOS_DIR)
         end
