@@ -7,5 +7,10 @@ module Photobox
     def cluster
       Photobox::Photo.cluster
     end
+
+    desc "info", "View a summary of photo folders and their contents"
+    def info
+      Photobox::Photo.info
+    end
   end
 end

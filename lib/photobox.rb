@@ -1,5 +1,7 @@
 require "photobox/version"
+require "date"
 require "fileutils"
+require "rainbow"
 
 module Photobox
   class Photo
@@ -20,6 +22,21 @@ module Photobox
           cluster_photos(photos)
           cluster_screenshots(screenshots)
           cluster_videos(videos)
+        end
+      end
+
+      def info
+        dirs = Dir.glob("#{PHOTOS_DIR}/*").select { |f| File.directory?(f) }
+        dirs.map! { |f| f.split("/").last }
+        headers = dirs.map { |f| f.split("-").first }.uniq
+
+        headers.each do |header|
+          puts Rainbow(header).blue.bright
+          dirs.select { |f| f.include?(header) }.each do |f|
+            file_count = Dir.glob("#{PHOTOS_DIR}/#{f}/*.*").count
+            puts "  #{Date::MONTHNAMES[f.split("-").last.to_i]} #{Rainbow(file_count).green}"
+          end
+          puts ""
         end
       end
 

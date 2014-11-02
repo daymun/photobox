@@ -2,11 +2,13 @@ PATH
   remote: .
   specs:
     photobox (0.0.1)
+      rainbow (~> 2.0)
       thor (~> 0.19)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    rainbow (2.0.0)
     rake (10.3.2)
     thor (0.19.1)
 
