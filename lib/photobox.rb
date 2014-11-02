@@ -29,15 +29,15 @@ module Photobox
         if photos.count.zero?
           puts "No unclustered photos."
         else
-          photos.each do |photo|
-            photo_date = photo.split("/")[-1].split(" ")[0]
-            next if defined?(last_photo_date) && photo_date == last_photo_date
+          month_dirs = photos.map do |photo|
+            "#{PHOTOS_DIR}/#{photo.split("/")[-1].split(" ")[0]}"
+          end
 
-            photo_month_dir = "#{PHOTOS_DIR}/#{photo_date}"
-            puts "Creating directory: #{photo_month_dir}"
-            FileUtils::mkdir_p(photo_month_dir)
-            FileUtils.mv(Dir.glob("#{photo_month_dir}*.jpg"), photo_month_dir)
-            last_photo_date = photo_date
+          month_dirs.uniq.each do |month_dir|
+            month_photos = Dir.glob("#{month_dir}*.jpg")
+            puts "Moving #{month_photos.count} photos to #{month_dir}."
+            FileUtils::mkdir_p(month_dir)
+            FileUtils.mv(month_photos, month_dir)
           end
         end
       end
