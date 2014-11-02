@@ -28,7 +28,7 @@ module Photobox
       def cluster_photos(photos)
         unless photos.count.zero?
           month_dirs = photos.map do |photo|
-            "#{PHOTOS_DIR}/#{photo.split("/")[-1].split(" ")[0]}"
+            "#{PHOTOS_DIR}/#{photo.split("/").last[0..6]}"
           end
 
           month_dirs.uniq.each do |month_dir|
