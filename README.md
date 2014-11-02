@@ -26,16 +26,16 @@ Or install it yourself as:
     $ gem install photobox
 
 ## Usage
+View a summary of photo folders and their contents:
+
+    $ photobox
+
 Group photos into folders by month:
 
     $ photobox cluster
 
-View a summary of photo folders and their contents:
-
-    $ photobox info
-
 ## Contributing
-1. Fork it ( https://github.com/[my-github-username]/photobox/fork )
+1. Fork it ( https://github.com/daymun/photobox/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
