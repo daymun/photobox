@@ -3,9 +3,12 @@ photobox
 
 Simple Dropbox photo management.
 
-## Assumtions
-* `~/Dropbox/Camera Uploads` exists
+## Assumptions
+* `~/Dropbox/Camera Uploads` contains photos, screenshots, and videos
 * Photos are in the following format: `yyyy-mm-dd hh.mm.ss.jpg`
+* Photos have tne `.jpg` extension
+* Screenshots have the `.png` extension
+* Videos have the `.mov` and `.mp4` extensions
 
 ## Installation
 Add this line to your application's Gemfile:
