@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Devin Wadsworth"]
   spec.email         = ["devinwadsworth@gmail.com"]
   spec.summary       = "Simple Dropbox photo management."
+  spec.description   = "Group photos into folders by month."
   spec.homepage      = "https://github.com/daymun/photobox"
   spec.license       = "MIT"
 
