@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 require "fileutils"
 
+# require "photobox/version"
+
+# module Photobox
+#   # Your code goes here...
+# end
+
 PHOTOS_DIR      = File.expand_path("~/Dropbox/Camera Uploads")
 SCREENSHOTS_DIR = "#{PHOTOS_DIR}/Screenshots"
 VIDEOS_DIR      = "#{PHOTOS_DIR}/Videos"
