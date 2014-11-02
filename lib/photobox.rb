@@ -45,9 +45,9 @@ module Photobox
         this_month_photos = Dir.glob("#{PHOTOS_DIR}/#{year}-#{month}/*.*")
         photos_difference = this_month_photos.count - last_month_photos.count
 
-        status = "You took #{Rainbow(this_month_photos.count).green} photos this month "
+        status = "You've taken #{Rainbow(this_month_photos.count).green} photos this month "
         status += if photos_difference > 0
-          "(#{Rainbow("#{photos_difference} more").green} than last month)."
+          "(#{photos_difference} more than last month)."
         else
           "(#{photos_difference.abs} less than last month)."
         end
