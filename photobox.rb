@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 require "fileutils"
 
-# PHOTOS_DIR = "~/Dropbox/Camera Uploads"
-PHOTOS_DIR = "photos"
+PHOTOS_DIR = File.expand_path("~/Dropbox/Camera Uploads")
 SCREENSHOTS_DIR = "#{PHOTOS_DIR}/Screenshots"
 
 Dir.glob("#{PHOTOS_DIR}/*.jpg") do |photo|
