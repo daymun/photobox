@@ -46,7 +46,7 @@ module Photobox
         if screenshots.count.zero?
           puts "No unclustered screenshots."
         else
-          puts "Moving screenshots to #{SCREENSHOTS_DIR}"
+          puts "Moving #{screenshots.count} screenshots to #{SCREENSHOTS_DIR}"
           FileUtils.mkdir_p(SCREENSHOTS_DIR)
           FileUtils.mv(screenshots, SCREENSHOTS_DIR)
         end
@@ -56,7 +56,7 @@ module Photobox
         if videos.count.zero?
           puts "No unclustered videos."
         else
-          puts "Moving videos to #{VIDEOS_DIR}"
+          puts "Moving #{videos.count} videos to #{VIDEOS_DIR}"
           FileUtils.mkdir_p(VIDEOS_DIR)
           FileUtils.mv(videos, VIDEOS_DIR)
         end
