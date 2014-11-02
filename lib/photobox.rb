@@ -38,6 +38,21 @@ module Photobox
           end
           puts ""
         end
+
+        year              = Time.now.year
+        month             = Time.now.month
+        last_month_photos = Dir.glob("#{PHOTOS_DIR}/#{year}-#{month - 1}/*.*")
+        this_month_photos = Dir.glob("#{PHOTOS_DIR}/#{year}-#{month}/*.*")
+        photos_difference = this_month_photos.count - last_month_photos.count
+
+        status = "You took #{Rainbow(this_month_photos.count).green} photos this month "
+        status += if photos_difference > 0
+          "(#{Rainbow("#{photos_difference} more").green} than last month)."
+        else
+          "(#{photos_difference.abs} less than last month)."
+        end
+
+        puts status
       end
 
       protected
